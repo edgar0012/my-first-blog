@@ -25,13 +25,13 @@ SECRET_KEY = 'zil6zpy@$y-o_ch7=10e2nn!-ibip040flei++g1c94=k2m0+g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['edgar095.pythonanywhere.com']
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    
+    'bootstrapform',
     'material',
     'material.frontend',
     'material.admin',
