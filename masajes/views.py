@@ -3,7 +3,7 @@ from django.contrib import messages
 from .forms import MasajeForm, EmpleadoForm
 from django.shortcuts import redirect
 from django.shortcuts import render, get_object_or_404
-from masajes.models import Cliente, Empleado
+from masajes.models import Cliente, Empleado,Masaje
 from django.contrib.auth.decorators import login_required
 
 @login_required
