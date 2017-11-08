@@ -1,0 +1,50 @@
+{% extends 'masajes/base.html' %}
+
+    {% block content %}
+
+<br>
+<br>
+      <h3>Listado de clientes</h3>
+
+ <div class="card-body">
+<a class="btn btn-primary btn-block" href="{% url 'cliente_nueva' %}">Crear</a>
+</div>
+
+      <br>
+      <br>
+
+ <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> Data Table Example</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered"  width="100%" cellspacing="0">
+             
+        <thead>
+          <tr>
+            <th>numero</th>
+            <th>nombre</th>
+            <th>Dia</th>
+            <th></th>
+          </tr>
+
+
+             {% for client in pub %}
+              <tr>
+                <td>{{client.pk}}<td>
+                <td>{{client.nombre}}<td>
+                <td>{{client.Dia}}<td>
+              <td><a  href="{% url 'cliente_edit' pk=client.pk %}">Editar</a> </td>
+<td><a  href="{% url 'cliente_remove' pk=client.pk %}">Eliminar</a> </td>
+              </tr>
+
+            {% endfor %}
+</thead>
+</table>
+ </div>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+      </div>
+    </div>
+
+    {% endblock content %}

@@ -1,0 +1,16 @@
+{% extends 'masajes/base.html' %}
+
+    {% block content %}
+
+        {% if pub.published_date %}
+        <div class="date">
+            {{ pub.published_date }}
+        </div>
+        {% else %}
+            <a class="btn btn-default" href="">Publish</a>
+        {% endif %}
+        <a class="btn btn-default" href=""><span class="glyphicon glyphicon-pencil"></span></a>
+        <a class="btn btn-default" href=""><span class="glyphicon glyphicon-remove"></span></a>
+        <h1>{{ pub.nombre }}</h1>
+        <p>{{ pub.Dia }}</p>
+    {% endblock %}

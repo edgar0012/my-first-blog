@@ -1,0 +1,48 @@
+{% extends 'masajes/base.html' %}
+
+    {% block content %}
+
+<br>
+<br>
+      <h3>Listado de Emleados</h3>
+<a class="btn btn-primary btn-block" href="{% url 'Empleada_nueva' %}">Crear</a>
+
+
+      <br>
+      <br>
+<div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> Data Table Example</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered"  width="100%" cellspacing="0">
+             
+               
+        <thead>
+          <tr>
+            <th>numero</th>
+            <th>nombre</th>
+            <th>Fecha</th>
+            <th></th>
+          </tr>
+
+
+             {% for Emple in ada %}
+              <tr>
+                <td>{{Emple.pk}}<td>
+                <td>{{Emple.nombre}}<td>
+                <td>{{Emple.fecha_nacimiento}}<td>
+              <td><a  href="{% url 'Empleado_edit' pk=Emple.pk %}">Editar</a> </td>
+              <td><a  href="{% url 'Empleado_remove' pk=Emple.pk %}">Eliminar</a> </td>
+              </tr>
+
+            {% endfor %}
+</thead>
+</table>
+          </div>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+      </div>
+    </div>
+
+    {% endblock content %}
